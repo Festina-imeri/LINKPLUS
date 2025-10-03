@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --pad: 16px;
+  --gap: 12px;
+  --maxw: 1366px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', system-ui, Arial, sans-serif;
+  background: #F7F8F9;
+  color: #0f172a;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.main-wrapper {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: var(--pad);
+}
+
+.content-box {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: var(--pad);
+}
+
+.flex-row {
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+}
+
+.flex-wrap-row {
+  display: flex;
+  gap: var(--gap);
+  flex-wrap: wrap;
+}
+
+input,
+button,
+select {
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+input[placeholder*="Search"] {
+  min-width: 250px;
+  width: auto;
+}
+
+select {
+  min-width: 120px;
+  width: auto;
+}
+
+.searchWrapper{
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+button {
+  cursor: pointer;
+}
+
+.btnPrimary {
+  background: #BF2428;
+  color: #fff;
+  border-color: #BF2428;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tblResponsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tblResponsive table {
+  min-width: 600px;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+th {
+  background: #f1f5f9;
+  font-weight: 600;
+}
+
+.sortableTh {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+
+.sortableTh:hover {
+  background: #e2e8f0;
+}
+
+.sortableTh.active {
+  background: #fef2f2;
+  color: #BF2428;
+}
+
+.thContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.sortIcon {
+  font-size: 12px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.sortIcon.active {
+  opacity: 1;
+  color: #BF2428;
+  font-weight: bold;
+}
+
+.sortIcon.inactive {
+  opacity: 0.3;
+}
+
+.sortableTh:hover .sortIcon.inactive {
+  opacity: 0.6;
+}
+
+.page_header {
+  padding: 24px 0;
+  margin-bottom: 8px;
+}
+
+.page_header h1 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+}
+
+.title_main {
+  font-size: 32px !important;
+  color: #BF2428 !important;
+  font-weight: 700;
+  margin: 0 !important;
+}
+
+.formLayout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--gap);
+  align-items: start;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+input.hasError{
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.msgError{
+  color: #ef4444;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btnPrimary:disabled {
+  background: #9ca3af;
+  border-color: #9ca3af;
+}
+
+.actionsRow{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.btnEdit, .btnDelete{
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.btnEdit:hover{
+  background-color: #e0f2fe;
+}
+
+.btnDelete:hover{
+  background-color: #fef2f2;
+}
+
+.modalOverlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalForm{
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modalForm h3{
+  margin: 0 0 16px 0;
+  color: #0f172a;
+}
+
+.btnGroup{
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+@media (max-width: 720px) {
+  .flex-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  table {
+    font-size: 14px;
+  }
+  
+  .formLayout {
+    grid-template-columns: 1fr;
+  }
+}
